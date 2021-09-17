@@ -24,6 +24,14 @@
 
 - [class.green]="event?.time === '8:00 am'" : this is a CLASS BINDING, which means if the right side of the equals sign evaluates to true, use the class green on this element.
 
+- index.html is where you will find where the app is hosted: <base href="/"> ... we could change it to something like <base href="/home">
+
+    ### For Routing:
+    1. We added a router-outlet component to our events-app component, which is the top level component for this app
+    2. We defined routes for each of our pages, including a default route...we did this in a 'routes.ts' file to make it easier (in the app folder)
+    3. We loaded our routes into our App Module using the Router Module
+    4. Added our base tage to our index.html page
+
 
 
 
