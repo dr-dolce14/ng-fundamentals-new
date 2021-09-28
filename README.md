@@ -32,6 +32,7 @@
     3. We loaded our routes into our App Module using the Router Module
     4. Added our base tage to our index.html page
 
+    - the [routerLink] can be added to an html tag to provide a clickable link to a specified route. the expression for [routerLink] takes in an array, which is a list of path segments, followed by the parameters.
 
 
 
