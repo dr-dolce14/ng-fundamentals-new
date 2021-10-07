@@ -1,11 +1,16 @@
 import { Injectable } from "@angular/core"
+import { Subject } from 'rxjs'
 
 // mark services as injectable, it's important! it is needed if you have a constructor that injects services...if it takes a dependency, that is.
 @Injectable()
 export class EventsService {
 
     getEvents() {
-        return EVENTS
+      let subject = new Subject()
+      //'subject' is a type of observable 
+      setTimeout(() => {subject.next(EVENTS); subject.complete(); }, 100)
+      // with subject.next(EVENTS), we're adding data to the observable's stream; we're doing it inside setTimeout to simulate asynchrony
+        return subject
     }
 
     getSingleEvent(id:number){

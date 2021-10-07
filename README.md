@@ -22,7 +22,7 @@
 
 -[hidden] vs *ngIf...the latter should be used if elements stay hidden, rather than hiding and unhiding constantly
 
-- [class.green]="event?.time === '8:00 am'" : this is a CLASS BINDING, which means if the right side of the equals sign evaluates to true, use the class green on this element.
+-[class.green]="event?.time === '8:00 am'" : this is a CLASS BINDING, which means if the right side of the equals sign evaluates to true, use the class green on this element.
 
 - index.html is where you will find where the app is hosted: <base href="/"> ... we could change it to something like <base href="/home">
 
@@ -33,6 +33,11 @@
     4. Added our base tage to our index.html page
 
     - the [routerLink] can be added to an html tag to provide a clickable link to a specified route. the expression for [routerLink] takes in an array, which is a list of path segments, followed by the parameters.
+
+    ### Side note on Observables
+    -Observables are like streams of data; they are like arrays where the data arrives over time. 
+    -'Subject' is a type of observable
+    -You get the data out of an observable by SUBSCRIBING to it
 
 
 
