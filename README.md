@@ -51,19 +51,25 @@
 
     
     ### Forms
-    -Template-based: allow you to build your form completely in your html template
-    -Model-based(Reactive Forms): allow you to build your form and implement logic in your component; makes all of your validations logic unit testable
+    - Template-based: allow you to build your form completely in your html template
+
+    - Model-based(Reactive Forms): allow you to build your form and implement logic in your component; makes all of your validations logic unit testable
 
     ### Data binding
-    -[( )]: two way binding(banana in a box)...used when updating info needs to be recorded and shown on page
-    -( ): used to bind in the html to component direction (typically used to respond to events)
-    -[ ]: used to bind in the component to html direction (displaying data from the component on the page)
+    - [( )]: two way binding(banana in a box)...used when updating info needs to be recorded and shown on page
+
+    - ( ): used to bind in the html to component direction (typically used to respond to events)
+
+    - [ ]: used to bind in the component to html direction (displaying data from the component on the page)
 
 
     ### Reactive forms and Validators
-    -you can pass multiple validators into FormControl(prepopulatedValue, validators) by making "validators" argument an ARRAY
-    -FormControl(prepopulatedValue, [Validators.required, Validators.pattern('[a-zA-Z].*')])
-    -angular.io/docs....search for Validators
+    - you can pass multiple validators into FormControl(prepopulatedValue, validators) by making "validators" argument an ARRAY
+
+    - FormControl(prepopulatedValue, [Validators.required, Validators.pattern('[a-zA-Z].*')])
+
+    - angular.io/docs....search for Validators
+
 
 
 
