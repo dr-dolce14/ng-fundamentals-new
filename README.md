@@ -53,7 +53,7 @@
     ### Forms
     - Template-based: allow you to build your form completely in your html template
 
-    - Model-based(Reactive Forms): allow you to build your form and implement logic in your component; makes all of your validations logic unit testable
+    - Model-based(Reactive Forms): allow you to build your form and implement logic in your component; makes all of your validations logic unit testable (profile component)
 
     ### Data binding
     - [( )]: two way binding(banana in a box)...used when updating info needs to be recorded and shown on page
