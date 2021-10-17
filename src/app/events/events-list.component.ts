@@ -3,6 +3,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventsService } from "./shared/events.service";
 import { ActivatedRoute } from "@angular/router";
+import { IEvent } from "./shared/index";
 
 @Component({
     // selector: 'events-list',
@@ -31,14 +32,14 @@ import { ActivatedRoute } from "@angular/router";
  // the #thumbnail is a TEMPLATE VARIABLE (like a reference variable) to our child component, which then exposes any public method on that child component
 })
 export class EventsListComponent implements OnInit{
-    events:any
+    events:IEvent[]
     constructor (private eventsService: EventsService, private route:ActivatedRoute) {
     }
 
     ngOnInit () {
         // this.eventsService.getEvents().subscribe(events => { this.events = events})
         // don't need to do the above anymore because we are doing it in our resolver
-        this.events = this.route.snapshot.data['events']
+        this.events = this.route.snapshot.data['events'] // the 'events' in brackets matches the 'events' of the route
     }
 
     

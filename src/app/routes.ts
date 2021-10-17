@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router'
+import {
+    EventsListComponent,
+    EventsDetailsComponent,
+    CreateEventComponent,
+    EventRouteActivator,
+    EventListResolver
+
+} from './events/index'
 import { Error404Component } from './errors/404.component';
-import { CreateEventComponent } from './events/create-event.component';
-import { EventRouteActivator } from './events/events-details/event-route-activator.service';
-import { EventsDetailsComponent } from "./events/events-details/events-details.component";
-import { EventListResolver } from './events/events-list-resolver.service';
-import { EventsListComponent } from "./events/events-list.component";
+
 
 export const appRoutes:Routes = [
     { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },
@@ -12,5 +16,12 @@ export const appRoutes:Routes = [
     { path: 'events', component: EventsListComponent, resolve: {events:EventListResolver}},
     { path: 'events/:id', component: EventsDetailsComponent, canActivate: [EventRouteActivator]},
     { path: '404', component: Error404Component},
-    { path: '', redirectTo: '/events', pathMatch: 'full'}
+    { path: '', redirectTo: '/events', pathMatch: 'full'},
+    {
+        path: 'user', // so anything within the user module will have this as a prefix...so like /user/profile
+        loadChildren: () => import('./user/user.module')
+            .then(m => m.UserModule)
+        // this is essentially saying when a route starts with /user, load the UserModule from that path after 'import'
+    }
+    
 ]

@@ -40,4 +40,31 @@
     -You get the data out of an observable by SUBSCRIBING to it
 
 
+    ### Differences between the App Module and a Feature Module (or a Lazy Loadable module):
+        1.
+        -App module will import BrowswerModule
+        -Feature module will import CommonModule
+
+        2.
+        -in Feature module, when importing RouterModule, we call .forChild so -> RouterModule.forChild
+        -in App module, when importing RouterModule, we call .forRoot -> RouterModule.forRoot
+
+    
+    ### Forms
+    -Template-based: allow you to build your form completely in your html template
+    -Model-based(Reactive Forms): allow you to build your form and implement logic in your component; makes all of your validations logic unit testable
+
+    ### Data binding
+    -[( )]: two way binding(banana in a box)...used when updating info needs to be recorded and shown on page
+    -( ): used to bind in the html to component direction (typically used to respond to events)
+    -[ ]: used to bind in the component to html direction (displaying data from the component on the page)
+
+
+    ### Reactive forms and Validators
+    -you can pass multiple validators into FormControl(prepopulatedValue, validators) by making "validators" argument an ARRAY
+    -FormControl(prepopulatedValue, [Validators.required, Validators.pattern('[a-zA-Z].*')])
+    -angular.io/docs....search for Validators
+
+
+
 

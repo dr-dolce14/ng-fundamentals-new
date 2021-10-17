@@ -1,6 +1,7 @@
 // child component to events-list
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IEvent } from './shared/index'
 
 @Component ({
     selector: 'events-thumbnail',
@@ -46,7 +47,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     `]
 })
 export class EventsThumbnailComponent {
-    @Input() event: any // this input decorator tells angular that this event will be passed in from another component, a parent 
+    @Input() event:IEvent // this input decorator tells angular that this event will be passed in from another component, a parent 
     // also, this 'event' has nothing to do with angular, it is the variable name from the exercise
 
     // @Output() eventClick = new EventEmitter()

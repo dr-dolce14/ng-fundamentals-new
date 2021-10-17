@@ -1,0 +1,26 @@
+<div>
+    <h1>Edit Your Profile </h1>
+    <hr>
+    <div class="col-md-4">
+        <!--the [formGroup] specifies which overall form we want to look at for the values in our profileForm object in our component-->
+      <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" novalidate>
+        <!--<div class="form-group" [ngClass]="{'error' : profileForm.controls.firstName.invalid && profileForm.controls.firstName.touched }">-->
+        <div class="form-group" [ngClass]="{'error': !validateFirstName() }">
+            <label for="firstName">First Name:</label>
+            <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.required">Required</em>
+            <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern">Must start with a letter</em>
+          <!--formControlName then specifies that actual values in the profileForm object; the names needs to match the property names of the FormGroup in our component-->
+          <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="First Name..." />
+        </div>
+        <!--<div class="form-group" [ngClass]="{'error' : profileForm.controls.lastName.invalid && profileForm.controls.lastName.touched }">-->
+        <div class="form-group" [ngClass]="{'error': !validateLastName() }">
+          <label for="lastName">Last Name:</label>
+          <em *ngIf="!validateLastName()">Required</em>
+          <input formControlName="lastName" id="lastName" type="text" class="form-control" placeholder="Last Name..." />
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-default"(click)="cancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
